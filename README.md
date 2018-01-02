@@ -36,12 +36,10 @@
 ### Initialize
 
 初始化GTag或OTag物件，需要的變數包括：
-
 * map為Google Maps API或Openlayers的一個物件；
 * queryForm為用來查詢的HTML的Form元件；
 
 example：
-
 ```js
 var tagmap = new OTag(map, queryForm); // 
 ```
@@ -52,3 +50,32 @@ var tagmap = new OTag(map, queryForm); //
 * 'around'：標記地圖點位置
 * 'region'：繪製矩形位置
 
+example：
+```js
+tagmap.initOption('around');
+```
+
+### Main methods
+
+* delAllMarkers()：刪除所有顯示的標記
+
+example：
+```js
+tagmap.delAllMarkers();
+```
+* panToCc()：移動與放大地圖至預設位置
+
+example：
+```js
+tagmap.panToCc();
+```
+
+### Experimental methods
+此程式引入Google Maps的規劃路徑功能，將查詢的結果，透過此功能設置篩選設施實際到點位的行車距離限制，此功能目前有很多限制，結果不一定正確。
+
+* tagmap.setDrivingLimit(distanceInKm)：設置行車距離限制，變數為距離，單位為公里，Null則為不限制行車距離。
+
+example：
+```js
+tagmap.setDrivingLimit('2');
+```
