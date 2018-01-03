@@ -1,6 +1,6 @@
 # QueryMap
 
-提供google map, openlayer地圖查詢後端資料庫的互動性操作，並且將查詢結果以Marker顯示於地圖上。
+提供「網際網路空間資訊系統」使用google map, openlayer地圖查詢後端資料庫的互動性操作，並且將查詢結果以Marker顯示於地圖上。
 
 含有以下功能：
 * 連結地圖的click事件，標記click的位置，在送出查詢時，將該點的經緯度資料送出，進行後端資料查詢
@@ -37,7 +37,7 @@
 
 初始化GTag或OTag物件，需要的變數包括：
 * map為Google Maps API或Openlayers的一個物件；
-* queryForm為用來查詢的HTML的Form元件；
+* queryForm為用來查詢的HTML的Form元件，欄位名稱不可為lat1、lon1、lat2、lon2，因為地圖標示的位置，將以這4個參數名稱傳送值進行查詢；
 
 example：
 ```js
@@ -78,4 +78,20 @@ tagmap.panToCc();
 example：
 ```js
 tagmap.setDrivingLimit('2');
+```
+
+### Database configuration
+* 設定資料庫連線資訊
+```php
+$dbhost = '[host]';              // 資料庫位址
+$dbuser = '[username]';          // 資料庫帳號
+$dbpass = '[password]';          // 資料庫密碼
+$dbname = '[dbname]';            // 資料庫名稱
+```
+* 設定查詢字串：$sql_dock['key'] = '[sql statement]';
+** key為查詢參數option的值；
+** sql statement為SQL敘述，其中查詢參數需以冒號為前置字元，例如:lat1；
+example：
+```php
+$sql_dock['all'] = 'select * from tags';
 ```
