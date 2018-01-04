@@ -103,3 +103,12 @@ $sql_dock['all'] = 'select * from tags where type=:data';
 ** lon1：點座標或矩形左下角之經度資料
 ** lat2：點座標或矩形右上角之緯度資料
 ** lon2：點座標或矩形右上角之經度資料
+* 表單記得加action屬性，指向querydata.php (檔名若有修改，記得這邊也要對應修改)，例：
+```html
+<form id="queryform" action="querydata.php">
+  <select name="option">
+    <option value="all>查詢全部</option>
+  </select>
+  <input type="hidden" name="data" value="SHT" />
+</form>
+```
