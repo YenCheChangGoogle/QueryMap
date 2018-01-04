@@ -107,7 +107,7 @@ $sql_dock['all'] = 'select * from tags where type=:data';
 ```html
 <form id="queryform" action="querydata.php">
   <select name="option">
-    <option value="all>查詢全部</option>
+    <option value="all">查詢全部</option>
   </select>
   <input type="hidden" name="data" value="SHT" />
 </form>
