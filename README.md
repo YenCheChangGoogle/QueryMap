@@ -110,5 +110,6 @@ $sql_dock['all'] = 'select * from tags where type=:data';
     <option value="all">查詢全部</option>
   </select>
   <input type="hidden" name="data" value="SHT" />
+  <input type="submit" value="查詢" />
 </form>
 ```
