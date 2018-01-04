@@ -71,7 +71,7 @@ tagmap.panToCc();
 ```
 
 ### Experimental methods
-此程式引入Google Maps的規劃路徑功能，將查詢的結果，透過此功能設置篩選設施實際到點位的行車距離限制，此功能目前有很多限制，結果不一定正確。
+此方法為實驗性方法，引入Google Maps的規劃路徑功能，將查詢的結果，透過此功能設置篩選設施實際到點位的行車距離限制，此功能目前有很多限制，結果不一定正確。
 
 * tagmap.setDrivingLimit(distanceInKm)：設置行車距離限制，變數為距離，單位為公里，Null則為不限制行車距離。
 
@@ -93,5 +93,13 @@ $dbname = '[dbname]';            // 資料庫名稱
 ** sql statement為SQL敘述，其中查詢參數需以冒號為前置字元，例如:lat1；
 example：
 ```php
-$sql_dock['all'] = 'select * from tags';
+$sql_dock['all'] = 'select * from tags where type=:data';
 ```
+
+### Form fields
+* 欄位名稱option為套件預設使用的SQL敘述為那一個，表單欄位需包含此欄位，若需更改，請連同更改querydata.php對應之參數名稱
+* 以下欄位名稱為套件預設使用之參數，請避免於表單使用
+** lat1：點座標或矩形左下角之緯度資料
+** lon1：點座標或矩形左下角之經度資料
+** lat2：點座標或矩形右上角之緯度資料
+** lon2：點座標或矩形右上角之經度資料
